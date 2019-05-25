@@ -1,0 +1,3 @@
+ MOFCOMP %SYSTEMROOT%\System32\WindowsVirtualization.V2.mof
+cd "C:\Program Files\Docker\Docker"
+./DockerCli.exe -SwitchDaemon

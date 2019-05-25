@@ -1,0 +1,47 @@
+﻿@model Project.ViewModels.CourseProgress
+
+@{
+    ViewBag.Title = "AddMaterials";
+}
+
+<h2>AddMaterials</h2>
+
+@using (Html.BeginForm("AddMaterials","Course",FormMethod.Post,new { enctype="multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Material</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Material.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Material.Date, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Material.Date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Material.CourseName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Material.CourseName, new SelectList(Model.Courses, "CourseName", "CourseName"), "", new { @class = "form-control select" })
+            @Html.ValidationMessageFor(model => model.Material.CourseName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+      <div class="form-group">
+        @Html.LabelFor(model => model.Material.FilePath, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+        <input type="file" name="file" value="upload">
+        </div>
+    </div>
+
+ 
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+
