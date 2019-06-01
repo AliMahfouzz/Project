@@ -216,6 +216,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\StudentController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -339,10 +340,43 @@
     <Compile Include="Migrations\201905241809450_EDITtableEnrollment.Designer.cs">
       <DependentUpon>201905241809450_EDITtableEnrollment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906011914482_settableattendance.cs" />
+    <Compile Include="Migrations\201906011914482_settableattendance.Designer.cs">
+      <DependentUpon>201906011914482_settableattendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906012006014_settableattendance1.cs" />
+    <Compile Include="Migrations\201906012006014_settableattendance1.Designer.cs">
+      <DependentUpon>201906012006014_settableattendance1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906012007569_settableattendance2.cs" />
+    <Compile Include="Migrations\201906012007569_settableattendance2.Designer.cs">
+      <DependentUpon>201906012007569_settableattendance2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906012016069_settableattendance5.cs" />
+    <Compile Include="Migrations\201906012016069_settableattendance5.Designer.cs">
+      <DependentUpon>201906012016069_settableattendance5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906012020182_settableenrollment.cs" />
+    <Compile Include="Migrations\201906012020182_settableenrollment.Designer.cs">
+      <DependentUpon>201906012020182_settableenrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906012030452_settableenrollment2.cs" />
+    <Compile Include="Migrations\201906012030452_settableenrollment2.Designer.cs">
+      <DependentUpon>201906012030452_settableenrollment2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906012241260_settableatt..cs" />
+    <Compile Include="Migrations\201906012241260_settableatt..Designer.cs">
+      <DependentUpon>201906012241260_settableatt..cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906012317465_removeadttendance.cs" />
+    <Compile Include="Migrations\201906012317465_removeadttendance.Designer.cs">
+      <DependentUpon>201906012317465_removeadttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignee.cs" />
     <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\AttendanceDetail.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Course.cs" />
@@ -676,10 +710,12 @@
     <Content Include="Views\Enrollment\ViewDepartments.cshtml" />
     <Content Include="Views\Home\GetElements.cshtml" />
     <Content Include="Views\Course\AddMaterials.cshtml" />
+    <Content Include="Views\Home\SaveAttendance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="uploads\" />
+    <Folder Include="Views\Attendance\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -777,6 +813,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905241809450_EDITtableEnrollment.resx">
       <DependentUpon>201905241809450_EDITtableEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906011914482_settableattendance.resx">
+      <DependentUpon>201906011914482_settableattendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906012006014_settableattendance1.resx">
+      <DependentUpon>201906012006014_settableattendance1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906012007569_settableattendance2.resx">
+      <DependentUpon>201906012007569_settableattendance2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906012016069_settableattendance5.resx">
+      <DependentUpon>201906012016069_settableattendance5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906012020182_settableenrollment.resx">
+      <DependentUpon>201906012020182_settableenrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906012030452_settableenrollment2.resx">
+      <DependentUpon>201906012030452_settableenrollment2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906012241260_settableatt..resx">
+      <DependentUpon>201906012241260_settableatt..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906012317465_removeadttendance.resx">
+      <DependentUpon>201906012317465_removeadttendance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

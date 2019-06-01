@@ -26,7 +26,6 @@ namespace Project.Models
         public DbSet<Course> Courses { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
-        public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Devoirs> assignments { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Department> Departments { get; set; }

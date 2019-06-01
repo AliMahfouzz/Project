@@ -22,48 +22,116 @@ namespace Project.Controllers
         {
             return View();
         }
+        
         [HttpGet]
         public ActionResult AddAttendance(Attendance model)
         {
-            AttendanceViewModel mymodel = new AttendanceViewModel();
+            AttendanceViewModel mymodel = new AttendanceViewModel() {
+                students = new List<Student>()
+            };
 
-
+            /*
             if (!string.IsNullOrWhiteSpace(model.CourseName))
             {
                 String coursename = db.Courses.Where(x => x.CourseName == model.CourseName).FirstOrDefault().CourseName;
-                var temp = db.Enrollments.Where(x => x.CourseName == coursename).ToList();
-
+                var temp = db.Enrollments.Where(x => x.CourseName == model.CourseName).ToList();
+                
                 foreach (var e in temp)
                 {
-                    Student myStu = new Student()
+                   
+                    Student myStu = new Student();
+                    myStu.StudentEmail = e.StudentEmail;
+                    var x = db.Students.Where(xx=>xx.StudentEmail == e.StudentEmail).ToList();
+                    foreach (var q in x)
                     {
-                        StudentEmail = e.StudentEmail
-                    };
-                    mymodel.students.Add(myStu);
+                        myStu.HomeNumber = q.HomeNumber;
+                        myStu.ParentId = q.ParentId;
+                        myStu.Address = q.Address;
+                        myStu.DateOfBirth = q.DateOfBirth;
+                        myStu.DepartmentId = q.DepartmentId;
+                        myStu.FatherName = q.FatherName;
+                        myStu.FirstName = q.FirstName;
+                        myStu.LastName = q.LastName;
+                        myStu.Gender = q.Gender;
+                        myStu.StudentId = q.StudentId;
+                        
+                       // mymodel.students.Clear();
+                        mymodel.students.Add(myStu);
+                        
+                    }
                 }
                 mymodel.courses = db.Courses.ToList();
+                return View(mymodel);
             }
             else
             {
-                mymodel.students = db.Students.ToList();
-                mymodel.courses = db.Courses.ToList();
-            }
-
+             //  mymodel.students = db.Students.ToList();
+               mymodel.courses = db.Courses.ToList();
+            }*/
+            mymodel.courses = db.Courses.ToList();
             return View(mymodel);
 
         }
 
-        [HttpPost]
-        public ActionResult AddAttendance(AttendanceViewModel my)
+        
+        public ActionResult SaveAttendance(Attendance model)
         {
-            /*  var temp = db.Enrollments.Where(x => x.CourseId == my.CourseId).ToList();
-              List<Student> listStudentsInCourse = new List<Student>();
-              foreach (var s in temp)
-              {
-                  listStudentsInCourse.Add(s.Student);
-              }
+            /*           var temp = db.Enrollments.Where(x=>x.CourseName == my.CourseName).ToList();
+                       //  var temp = db.Enrollments.Where(x => x.CourseId == my.CourseId).ToList();
+                         List<Student> listStudentsInCourse = new List<Student>();
+                         foreach (var s in temp)
+                         {
+                             listStudentsInCourse.Add(s.Student);
+                         }
               */
-            return View(my);
+
+            if (!string.IsNullOrWhiteSpace(model.CourseName))
+            {
+                String coursename = db.Courses.Where(x => x.CourseName == model.CourseName).FirstOrDefault().CourseName;
+                var temp = db.Enrollments.Where(x => x.CourseName == model.CourseName).ToList();
+                List<Attendance> objOrder = new List<Attendance>();
+                AttendanceDetail ObjorderDetails = new AttendanceDetail();
+                foreach (var e in temp)
+                {
+
+                    Student myStu = new Student();
+                    myStu.StudentEmail = e.StudentEmail;
+                    var x = db.Students.Where(xx => xx.StudentEmail == e.StudentEmail).ToList();
+                    foreach (var q in x)
+                    {
+                        myStu.HomeNumber = q.HomeNumber;
+                        myStu.ParentId = q.ParentId;
+                        myStu.Address = q.Address;
+                        myStu.DateOfBirth = q.DateOfBirth;
+                        myStu.DepartmentId = q.DepartmentId;
+                        myStu.FatherName = q.FatherName;
+                        myStu.FirstName = q.FirstName;
+                        myStu.LastName = q.LastName;
+                        myStu.Gender = q.Gender;
+                        myStu.StudentId = q.StudentId;
+
+                        // mymodel.students.Clear();
+
+
+                        Attendance a = new Attendance { StudentEmail = myStu.StudentEmail, CourseName = coursename, date = model.date, Status = "false" };
+                        objOrder.Add(a);
+
+
+                    }
+
+                }
+                   
+                    ObjorderDetails.attendances = objOrder;
+                    return View(ObjorderDetails);
+            }
+            else
+            {
+                //  mymodel.students = db.Students.ToList();
+
+            }
+
+
+            return View(); 
 
         }
         public ActionResult GetElements(DateTime CourseDate, string CourseName)
@@ -73,10 +141,10 @@ namespace Project.Controllers
                 date = CourseDate,
                 CourseName = CourseName
             };
-            return RedirectToAction("AddAttendance", "Home", model);
+            return RedirectToAction("SaveAttendance", "Home", model);
             // return View();
         }
-
+        
 
         public ActionResult RegisterTeacher()
         {

@@ -9,7 +9,9 @@ namespace Project.ViewModels
     public class AttendanceViewModel
     {
         public List<Student> students { get; set; }
+        public String CourseName { get; set; }
         public List<Course> courses { get; set; }
         public List<Enrollment> Enrollments { get; set; }
+       
     }
 }

@@ -16,62 +16,28 @@
                 window.location.href = "@Url.Action("GetElements", "Home")" + "?CourseDate=" + $("#CourseDate").val() + "&CourseName=" + $("#CourseName").val();
             });
         });
+
+      
+
+
     </script>
 }
 
-@*<link rel="stylesheet" href="//cdn.jsdelivr.net/chosen/1.1.0/chosen.css">
-<script src="//cdn.jsdelivr.net/chosen/1.1.0/chosen.jquery.js"></script>*@
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Attendance</div>
-        <div class="panel-body">
-            <input type="date" id="CourseDate" name="CourseDate">
-            <select class="form-control chosen-select" id="CourseName" name="CourseName">
-                @foreach (var course in Model.courses)
-                {
-                    <option>@course.CourseName</option>
-                }
-            </select>
-            <a href="#" id="button1" class="btn btn-primary">Get Students</a>
 
-            <div class="clearfix"></div>
-        </div>
+<div class="panel panel-default">
+    <div class="panel-heading">Attendance</div>
+    <div class="panel-body">
+        <input type="date" id="CourseDate" name="CourseDate">
+        <select class="form-control chosen-select" id="CourseName" name="CourseName">
+            @foreach (var course in Model.courses)
+            {
+                <option>@course.CourseName</option>
+            }
+        </select>
+        <a href="#" id="button1" class="btn btn-primary">Get Students</a>
 
-    </div>
-<form class="form-inline" role="form">
-    <div class="panel panel-default">
-        <div class="panel-heading">Manage Attendance</div>
-        <div class="panel-body">
-            <div class="table-responsive">
-                <!--Table-->
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Email</th>
-                            <th scope="col">Department</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Remark</th>
-                        </tr>
-                    </thead>
-                    @foreach (var student in Model.students)
-                    {
-                        <tr>
-                            <td>@student.Email</td>
-                            <td>@student.Department</td>
-                            <td>
-                                <select id="dropdowntipo">
-                                    <option value="Present">Present</option>
-                                    <option value="Absent">Absent</option>
-                                </select>
-                            <td>
-                                <input type="text" class="form-control" id="Remark" placeholder="Insert Remark">
-                        </tr>
-                    }
-                </table>
-            </div>
-        </div>
+        <div class="clearfix"></div>
     </div>
 
-    <center><button type="submit" id="button1" name="button1" formaction='@Url.Action("AddAttendance", "Home")'>Save Attendance</button></center>
-</form>
-
+</div>

@@ -11,8 +11,10 @@ namespace Project.Models
         [Key]
         public int EnrollmentId { get; set; }
         public Student Student { get; set; }
+        
         public String StudentEmail { get; set; }
         public Parent Parent { get; set; }
+      
         public String ParentEmail { get; set; }
         public Teacher Teacher { get; set; }
         public String TeacherEmail { get; set; }

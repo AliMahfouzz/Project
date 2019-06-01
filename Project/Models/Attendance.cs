@@ -10,14 +10,11 @@ namespace Project.Models
     {
         [Key]
         public DateTime date { get; set; }
+        public String Status { get; set; }
+        public String Remark { get; set; }
         public Student Student { get; set; }
-        public string StudentID { get; set; }
-        public String Email { get; set; }
-
-        public bool Status { get; set; }
-
+        public String StudentEmail { get; set; }
         public Course Course { get; set; }
-        public int CourseId { get; set; }
         public String CourseName { get; set; }
 
     }
