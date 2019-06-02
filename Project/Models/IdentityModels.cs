@@ -33,6 +33,8 @@ namespace Project.Models
         public DbSet<Days> Days { get; set; }
         public DbSet<Material> Materials { get; set; }
         public DbSet<Assignee> Assignees { get; set; }
+        public DbSet<AttendanceDetail> AttendanceDetails { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

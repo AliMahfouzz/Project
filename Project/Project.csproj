@@ -216,7 +216,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\StudentController.cs" />
-    <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -371,6 +370,10 @@
     <Compile Include="Migrations\201906012317465_removeadttendance.cs" />
     <Compile Include="Migrations\201906012317465_removeadttendance.Designer.cs">
       <DependentUpon>201906012317465_removeadttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906020023016_SettingUpAttendance.cs" />
+    <Compile Include="Migrations\201906020023016_SettingUpAttendance.Designer.cs">
+      <DependentUpon>201906020023016_SettingUpAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -715,7 +718,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="uploads\" />
-    <Folder Include="Views\Attendance\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -837,6 +839,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906012317465_removeadttendance.resx">
       <DependentUpon>201906012317465_removeadttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906020023016_SettingUpAttendance.resx">
+      <DependentUpon>201906020023016_SettingUpAttendance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

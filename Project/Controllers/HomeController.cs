@@ -134,6 +134,22 @@ namespace Project.Controllers
             return View(); 
 
         }
+
+
+        [HttpPost]
+        public ActionResult SaveAttendance(AttendanceDetail Order)
+        {
+
+            db.AttendanceDetails.Add(Order);
+            db.SaveChanges();
+            return RedirectToAction("Index","Home");
+        }
+
+
+
+
+
+
         public ActionResult GetElements(DateTime CourseDate, string CourseName)
         {
             Attendance model = new Attendance()

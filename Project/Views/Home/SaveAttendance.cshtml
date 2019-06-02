@@ -8,33 +8,27 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10 text-right">
-                <input type="button" value="Add Product" class="btn btn-primary" />
-            </div>
-        </div>
+        
         <div class="form-group">
             <div class="col-md-12">
                 <table class="table table-condensed table-hover">
                     <tr>
                         <th>
-                            Product Code
-                        </th>
-                        <th>
-                            Product Name
-                        </th>
-                        <th>
-                            Quantity
-                        </th>
-                        <th>
-                            Price
-                        </th>
-                        <th>
-                            Total Amount
+                            Student Email
                         </th>
                         <th>
                             Course Name
+                        </th> 
+                        <th>
+                           Date
                         </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            Remark
+                        </th>
+                       
                     </tr>
                     @{
                         //To make unique Id
@@ -46,14 +40,35 @@
                                 <td>
 
 
-                                    @Html.EditorFor(o => o.attendances[i].StudentEmail, new { @id = "ItemCode_" + i })
+                                    @Html.EditorFor(o => o.attendances[i].StudentEmail, new { @id = "StudentEmail" + i })
+                                </td> 
+                                <td>
+
+
+                                    @Html.EditorFor(o => o.attendances[i].CourseName, new { @id = "StudentEmail" + i })
+                                </td> 
+                                <td>
+
+
+                                    @Html.EditorFor(o => o.attendances[i].date, new { @id = "StudentEmail" + i })
                                 </td>
                                 <td>
-                                    @Html.EditorFor(o => o.attendances[i].Status, new { @id = "ProductName_" + i })
+
+
+                                    @Html.DropDownListFor(o => o.attendances[i].Status, new List<SelectListItem>()
+{
+  new SelectListItem() { Text= "Present", Value = "Present" },
+  new SelectListItem() { Text= "Absent", Value = "Absent", Selected = true }
+}, "Select ...")
+
+
+
+
                                 </td>
                                 <td>
-                                    @Html.EditorFor(o => o.attendances[i].Remark, new { @id = "Qty_" + i })
-                                </td>
+                                    @Html.EditorFor(o => o.attendances[i].Remark, new { @id = "Remark" + i })
+                                </td> 
+                               
                                 
 
 
