@@ -222,7 +222,7 @@ namespace Project.Controllers
                 ViewBag.Message = "Error............";
             }
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
         /*
         public ActionResult Addas()

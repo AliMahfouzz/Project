@@ -727,6 +727,7 @@
     <Content Include="Views\Home\SaveAttendance.cshtml" />
     <Content Include="Views\Grade\SaveGrades.cshtml" />
     <Content Include="Views\Grade\AddGrade.cshtml" />
+    <Content Include="Views\Shared\layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
