@@ -429,6 +429,8 @@
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\fullcalendar.print.min.css" />
+    <Content Include="Content\sidebar.css" />
+    <Content Include="Content\sidebar.min.css" />
     <Content Include="Content\Yeti.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -465,6 +467,8 @@
     <Content Include="Content\bootstrap-chosen.scss" />
     <Content Include="Content\bootstrap-chosen.less" />
     <Content Include="credentials.json" />
+    <Content Include="Content\sidebar.less" />
+    <Content Include="Content\sidebar.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\fullcalendar.js" />
     <Content Include="Scripts\fullcalendar.min.js" />
