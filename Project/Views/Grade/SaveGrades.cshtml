@@ -1,0 +1,69 @@
+﻿@model Project.Models.GradeDetail
+@{
+    ViewBag.Title = "www.cpmpilemode.com";
+}
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <table class="table table-condensed table-hover">
+                    <tr>
+                        <th>
+                            Student Email
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                       
+                        <th>
+                            Grade
+                        </th>
+                       
+
+                    </tr>
+                    @{
+                        //To make unique Id
+                        int i = 0;
+                        foreach (var item in Model.Grades.ToList())
+                        {
+
+                            <tr>
+                                <td>
+
+
+                                    @Html.EditorFor(o => o.Grades[i].StudentEmail, new { @id = "StudentEmail" + i })
+                                </td>
+                                <td>
+
+
+                                    @Html.EditorFor(o => o.Grades[i].CourseName, new { @id = "StudentEmail" + i })
+                                </td>
+                                <td>
+
+
+                                    @Html.EditorFor(o => o.Grades[i].grade, new { @id = "StudentEmail" + i })
+                                </td>
+                              
+
+
+
+                            </tr>
+                            i++;
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-center">
+                <input type="submit" value="Save Grades" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}  

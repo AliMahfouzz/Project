@@ -1,0 +1,43 @@
+﻿@model  Project.ViewModels.AttendanceViewModel
+@{
+    ViewBag.Title = "AddAttendance";
+}
+<br>
+
+
+@section scripts{
+    <script type="text/javascript">
+
+        //$('chosen-select').chosen();
+
+        $(document).ready(function () {
+            $("#button1").click(function (event) {
+                event.preventDefault();
+                window.location.href = "@Url.Action("GetElements", "Grade")" + "?CourseName=" + $("#CourseName").val();
+            });
+        });
+
+
+
+
+    </script>
+}
+
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">Attendance</div>
+    <div class="panel-body">
+    
+        <select class="form-control chosen-select" id="CourseName" name="CourseName">
+            @foreach (var course in Model.courses)
+            {
+                <option>@course.CourseName</option>
+            }
+        </select>
+        <a href="#" id="button1" class="btn btn-primary">Get Students</a>
+
+        <div class="clearfix"></div>
+    </div>
+
+</div>

@@ -218,6 +218,7 @@
     <Compile Include="Controllers\api\StudentController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\EnrollmentController.cs" />
+    <Compile Include="Controllers\GradeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -375,6 +376,10 @@
     <Compile Include="Migrations\201906020023016_SettingUpAttendance.Designer.cs">
       <DependentUpon>201906020023016_SettingUpAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906020053589_SettingUpGrades.cs" />
+    <Compile Include="Migrations\201906020053589_SettingUpGrades.Designer.cs">
+      <DependentUpon>201906020053589_SettingUpGrades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignee.cs" />
@@ -388,6 +393,8 @@
     <Compile Include="Models\Devoirs.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Grade.cs" />
+    <Compile Include="Models\GradeDetail.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Material.cs" />
@@ -714,6 +721,8 @@
     <Content Include="Views\Home\GetElements.cshtml" />
     <Content Include="Views\Course\AddMaterials.cshtml" />
     <Content Include="Views\Home\SaveAttendance.cshtml" />
+    <Content Include="Views\Grade\SaveGrades.cshtml" />
+    <Content Include="Views\Grade\AddGrade.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -842,6 +851,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906020023016_SettingUpAttendance.resx">
       <DependentUpon>201906020023016_SettingUpAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906020053589_SettingUpGrades.resx">
+      <DependentUpon>201906020053589_SettingUpGrades.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
