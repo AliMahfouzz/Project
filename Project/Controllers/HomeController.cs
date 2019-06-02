@@ -224,36 +224,13 @@ namespace Project.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-        /*
-        public ActionResult Addas()
-        {
+
+        public ActionResult GetAttendances() {
+            var d = db.Attendances.Where(x=>x.StudentEmail == User.Identity.Name);
+            return View(d);
 
 
-            // Assignment mymodel = new Assignment();
-            //mymodel.parents = db.Parents.ToList();
-            var students = db.Students.ToList();
-            var courses = db.Courses.ToList();
-
-            Assignment dev = new Assignment()
-            {
-                Students = students,
-                Courses = courses
-
-            };
-
-
-            return View(dev);
         }
-        [HttpPost]
-        public ActionResult Addas(Assignment model)
-        {
-
-
-            return View();
-        }
-
-
-    */
        
 
 

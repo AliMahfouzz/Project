@@ -36,6 +36,7 @@ namespace Project.Models
         public DbSet<AttendanceDetail> AttendanceDetails { get; set; }
         public DbSet<GradeDetail> GradeDetails { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

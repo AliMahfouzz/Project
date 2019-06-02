@@ -105,6 +105,7 @@
                         @if (User.IsInRole("Student"))
                         {
                             <li>@Html.ActionLink("Get Grades", "GetGrades", "Grade")</li>
+                            <li>@Html.ActionLink("Get Attendances", "GetAttendances", "Home")</li>
                             
                         }
                     </ul>
