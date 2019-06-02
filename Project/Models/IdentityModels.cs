@@ -26,7 +26,7 @@ namespace Project.Models
         public DbSet<Course> Courses { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
-        public DbSet<Devoirs> assignments { get; set; }
+        public DbSet<DAssignment> assignments { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Class> Classes { get; set; }
@@ -35,6 +35,7 @@ namespace Project.Models
         public DbSet<Assignee> Assignees { get; set; }
         public DbSet<AttendanceDetail> AttendanceDetails { get; set; }
         public DbSet<GradeDetail> GradeDetails { get; set; }
+        public DbSet<Grade> Grades { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

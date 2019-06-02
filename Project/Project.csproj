@@ -216,11 +216,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\StudentController.cs" />
+    <Compile Include="Controllers\AssignmentController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\GradeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ViewFilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -380,9 +382,14 @@
     <Compile Include="Migrations\201906020053589_SettingUpGrades.Designer.cs">
       <DependentUpon>201906020053589_SettingUpGrades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906022121545_dassignment.cs" />
+    <Compile Include="Migrations\201906022121545_dassignment.Designer.cs">
+      <DependentUpon>201906022121545_dassignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignee.cs" />
+    <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\AttendanceDetail.cs" />
     <Compile Include="Models\Class.cs" />
@@ -393,6 +400,7 @@
     <Compile Include="Models\Devoirs.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\FileNames.cs" />
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\GradeDetail.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -407,6 +415,7 @@
     <Compile Include="ViewModels\AssigneeViewModel.cs" />
     <Compile Include="ViewModels\Assignment.cs" />
     <Compile Include="ViewModels\AttendanceViewModel.cs" />
+    <Compile Include="ViewModels\AttendanceProgress.cs" />
     <Compile Include="ViewModels\CourseProgress.cs" />
     <Compile Include="ViewModels\EnrollmentViewModel.cs" />
     <Compile Include="ViewModels\ParentViewModel.cs" />
@@ -440,6 +449,7 @@
     <Content Include="Images\a2.jpg" />
     <Content Include="Images\a3.jpg" />
     <Content Include="Images\a4.jpg" />
+    <Content Include="Images\download.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -728,6 +738,9 @@
     <Content Include="Views\Grade\SaveGrades.cshtml" />
     <Content Include="Views\Grade\AddGrade.cshtml" />
     <Content Include="Views\Shared\layout.cshtml" />
+    <Content Include="Views\ViewFiles\Index.cshtml" />
+    <Content Include="Views\Assignment\AddAssignment.cshtml" />
+    <Content Include="Views\Grade\GetGrades.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -859,6 +872,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906020053589_SettingUpGrades.resx">
       <DependentUpon>201906020053589_SettingUpGrades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906022121545_dassignment.resx">
+      <DependentUpon>201906022121545_dassignment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

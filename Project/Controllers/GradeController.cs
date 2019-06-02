@@ -107,7 +107,13 @@ namespace Project.Controllers
         }
 
 
-
+        public ActionResult GetGrades()
+        {
+            var temp = db.Grades.Where(x=>x.StudentEmail == User.Identity.Name);
+            return View(temp);
+          
+        }
+       
 
 
 

@@ -7,25 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <style>
-        .sidebar {
-            width: 180px;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 51px;
-            bottom: 0;
-            left: 0;
-            z-index: 1000;
-            display: block;
-            padding: 20px;
-            overflow-x: hidden;
-            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-            background-color: #f5f5f5;
-            border-right: 1px solid #eee;
-        }
-    </style>
+  
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -63,28 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="sidebar">
-                <ul class="nav nav-sidebar">
-                    <li>@Html.ActionLink("Register Student", "RegisterStu", "Account", null, new { id = "item 1" })</li>
-                    <li>@Html.ActionLink("Register Parent", "RegisterParent", "Account", null, new { id = "item 2" })</li>
-                    <li>@Html.ActionLink("Register Teacher", "RegisterTeacher", "Account", null, new { id = "item 3" })</li>
-                    <li>@Html.ActionLink("Add Attendance", "AddAttendance", "Home")</li>
-                    <li>@Html.ActionLink("Add Enrollment", "Add", "Enrollment", null, new { id = "item 2" })</li>
-                    <li>@Html.ActionLink("Assign Teacher", "AssignTeacher", "Enrollment", null, new { id = "item 2" })</li>
-                    <li>@Html.ActionLink("View Enrollments", "ViewEnrollments", "Enrollment")</li>
-                    <li>@Html.ActionLink("Add Course", "Add", "Course", null, new { id = "item 1" })</li>
-                    <li>@Html.ActionLink("View Courses", "ViewCourses", "Course")</li>
-                    <li>@Html.ActionLink("Add Class", "ADDCLASS", "Enrollment")</li>
-                    <li>@Html.ActionLink("View Classes", "ViewClass", "Enrollment")</li>
-                    <li>@Html.ActionLink("Add Department", "AddDepartment", "Enrollment")</li>
-                    <li>@Html.ActionLink("View Departments", "ViewDepartments", "Enrollment")</li>
-                    <li>@Html.ActionLink("Add Material", "AddMaterials", "Course")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
 
 
     <div class="container body-content">
