@@ -6,7 +6,11 @@
 
     ViewBag.Title = "RegisterTeacher";
 }
+<head>
 
+
+    <link href="~/Content/Chosen/chosen.min.css" rel="stylesheet" />
+</head>
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("RegisterTeacher", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -59,10 +63,10 @@
     <div class="form-group">
         @Html.LabelFor(m => m.DepartmentId, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.Departments, "DepartmentId", "Name"), "", new { @class = "form-control select" })
+            @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.Departments, "DepartmentId", "Name"), "", new { @class = "form-control", id = "normalDropDown" })
         </div>
     </div>
-   
+
     <div class="form-group">
         @Html.LabelFor(m => m.TeacherEmail, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -90,4 +94,12 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+
+            $("#normalDropDown").chosen();
+
+        });
+    </script>
+    <script src="~/Scripts/chosen.jquery.min.js"></script>
 }

@@ -5,7 +5,11 @@
 
     ViewBag.Title = "Register";
 }
+<head>
 
+
+    <link href="~/Content/Chosen/chosen.min.css" rel="stylesheet" />
+</head>
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("RegisterStu", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -65,7 +69,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.DepartmentId, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.Departments, "DepartmentId", "Name"), "", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.Departments, "DepartmentId", "Name"), "", new { @class = "form-control", id = "normalDropDown" })
         </div>
     </div>
 
@@ -73,7 +77,11 @@
     <div class="form-group">
         @Html.LabelFor(m => m.ParentId, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.ParentId, new SelectList(Model.Parents, "ParentId", "ParentEmail"), "", new { @class = "form-control" } )
+            <a class="chosen-single chosen-default">
+                @Html.DropDownListFor(m => m.ParentId, new SelectList(Model.Parents, "ParentId", "ParentEmail"), "", new { @class = "form-control" })
+
+                <div><b></b></div>
+            </a>
         </div>
     </div>
 
@@ -104,4 +112,12 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+
+            $("#normalDropDown").chosen();
+
+        });
+    </script>
+    <script src="~/Scripts/chosen.jquery.min.js"></script>
 }

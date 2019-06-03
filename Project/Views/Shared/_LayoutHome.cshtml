@@ -97,7 +97,7 @@
                             <li>@Html.ActionLink("View Departments", "ViewDepartments", "Enrollment")</li>
                             <li>@Html.ActionLink("Add Department", "AddDepartment", "Enrollment")</li>
                         }
-                        @if (User.IsInRole("Teacher,Administrator"))
+                        @if (User.IsInRole("Teacher"))
                         {
                             <li>@Html.ActionLink("Add Attendance", "AddAttendance", "Home")</li>
                             <li>@Html.ActionLink("Add Material", "AddMaterials", "Course")</li>
