@@ -454,11 +454,14 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\a.jpg" />
+    <Content Include="Images\a.png" />
     <Content Include="Images\a1.jpg" />
     <Content Include="Images\a2.jpg" />
     <Content Include="Images\a3.jpg" />
     <Content Include="Images\a4.jpg" />
     <Content Include="Images\download.png" />
+    <Content Include="Images\in.jfif" />
+    <Content Include="Images\s.jfif" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
