@@ -793,6 +793,8 @@
     <Content Include="Views\Assignment\AddAssignment.cshtml" />
     <Content Include="Views\Grade\GetGrades.cshtml" />
     <Content Include="Views\Home\GetAttendances.cshtml" />
+    <Content Include="Views\Enrollment\Delete.cshtml" />
+    <Content Include="Views\Enrollment\DeleteDepartment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

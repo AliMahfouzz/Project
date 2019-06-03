@@ -6,11 +6,12 @@
 
 <h2>ViewClass</h2>
 
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ClassId)
-        </th>
+        </th> 
         <th>
             @Html.DisplayNameFor(model => model.ClassName)
         </th>
@@ -21,9 +22,15 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.ClassId)
-        </td> 
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ClassName)
+        </td>
+        <td>
+
+            @Html.ActionLink("Delete", "Delete", new { item.ClassId }, new {@class="btn-danger btn"})
+
+
         </td>
     </tr>
 }

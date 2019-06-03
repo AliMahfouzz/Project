@@ -95,6 +95,31 @@ namespace Project.Controllers
 
         }
         [Authorize(Roles = "Administrator")]
+        public ActionResult Delete(int ClassId)
+        {
+
+            return View(db.Classes.Where(x => x.ClassId == ClassId).FirstOrDefault());
+
+
+
+        }
+        [Authorize(Roles = "Administrator")]
+        [HttpPost]
+        public ActionResult Delete(int ClassId,FormCollection form)
+        {
+            Class c = db.Classes.Where(x => x.ClassId == ClassId).FirstOrDefault();
+            db.Classes.Remove(c);
+            db.SaveChanges();
+           return RedirectToAction("ViewClass","Enrollment");
+
+        }
+
+
+       
+
+
+
+        [Authorize(Roles = "Administrator")]
         public ActionResult AddDepartment(Department s)
         {
             db.Departments.Add(s);
@@ -111,9 +136,27 @@ namespace Project.Controllers
 
 
         }
-        
-        
 
+
+        [Authorize(Roles = "Administrator")]
+        public ActionResult DeleteDepartment(int DepartmentId)
+        {
+
+            return View(db.Departments.Where(x => x.DepartmentId == DepartmentId).FirstOrDefault());
+
+
+
+        }
+        [Authorize(Roles = "Administrator")]
+        [HttpPost]
+        public ActionResult DeleteDepartment(int DepartmentId, FormCollection form)
+        {
+            Department c = db.Departments.Where(x => x.DepartmentId == DepartmentId).FirstOrDefault();
+            db.Departments.Remove(c);
+            db.SaveChanges();
+            return RedirectToAction("ViewDepartments", "Enrollment");
+
+        }
 
 
 
