@@ -6,9 +6,11 @@
 }
 
 <h2>View Enrollments</h2>
+<link href="~/Scripts/DataTables-1.10.18/css/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/DataTables-1.10.18/js/jquery.js"></script>
+<script src="~/Scripts/DataTables-1.10.18/js/jquery.dataTables.js"></script>
 
-
-<table class="table table-striped" id="myTable">
+<table class="table table-striped" id="table_id">
     <thead>
         <tr>
             <th>
@@ -20,7 +22,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.TeacherEmail)
             </th>
-            <th></th>
+
         </tr>
     </thead>
     <tbody>
@@ -41,3 +43,10 @@
         }
     </tbody>
 </table>
+@section scripts{
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#table_id').DataTable();
+    });
+</script>
+    }

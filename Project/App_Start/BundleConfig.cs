@@ -25,7 +25,11 @@ namespace Project
             bundles.Add(new StyleBundle("~/Content/css").Include(
                      "~/Content/Yeti.css",
                      "~/Content/site.css"));
-            
+
+          bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                  "~/Scripts/jquery-{version}.js",
+                  "~/Scripts/DataTables-1.10.18/js/jquery.dataTables.js"));
+                  
         }
     }
 }

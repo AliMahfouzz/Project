@@ -111,12 +111,21 @@
     <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
     </Reference>
+    <Reference Include="Mvc.JQuery.DataTables, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mvc.JQuery.DataTables.1.5.44\lib\net451\Mvc.JQuery.DataTables.dll</HintPath>
+    </Reference>
+    <Reference Include="Mvc.JQuery.DataTables.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mvc.JQuery.DataTables.Common.1.5.44\lib\net451\Mvc.JQuery.DataTables.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.7.5\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -466,6 +475,41 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
+    <Content Include="Scripts\chosen.proto.js" />
+    <Content Include="Scripts\chosen.proto.min.js" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="Scripts\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="Scripts\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="Scripts\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="Scripts\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="Scripts\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\datatables.css" />
+    <Content Include="Scripts\datatables.js" />
+    <Content Include="Scripts\datatables.min.css" />
+    <Content Include="Scripts\datatables.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -567,6 +611,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -669,6 +714,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\prototype.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
